@@ -8,9 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <title>住宅の家賃価値計算ツール</title>
-    <link rel="stylesheet" href="{% static 'rentvalue/index.css' %}" />
-    <link rel="stylesheet" href="{% static 'rentvalue/form.css' %}" />
+    <title>title</title>
+    <link rel="stylesheet" href="{% static 'appname/cssname.css' %}" />
 </head>
 <body>
 </body>
