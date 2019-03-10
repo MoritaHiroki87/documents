@@ -1,4 +1,8 @@
 # services.pyの書き方（っていうかまあよく書くやつ）
+クエリの取り方は下記のページ参照。<br/>
+http://thinkami.hatenablog.com/entry/2015/09/04/235841#今回使用するModel
+
+
 
 ### テーブルをjoin
 curtainっていうモデルをprojectとjoinする。<br/>
