@@ -1,7 +1,10 @@
 # templateの書き方
 
 ## headerの書き方
-```html{% load staticfiles %}
+```html
+{% extends "appname/basehtml.html" %}
+
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="ja">
 <head>
