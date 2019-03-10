@@ -1,6 +1,6 @@
 # forms.pyの書き方
 django公式
-[https://docs.djangoproject.com/ja/2.1/topics/forms/:title]
+[https://docs.djangoproject.com/ja/2.1/topics/forms/]
 
 
 
