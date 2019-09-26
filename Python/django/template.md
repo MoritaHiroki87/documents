@@ -16,8 +16,8 @@
 </head>
 <body>
     
-    <!-- urlリンク -->
-    <a class="postalLink link-icon" href="{% url 'shisan:postal' %}">
+    <!-- urlリンク pathnameはurls.pyで指定のname属性-->
+    <a class="postalLink link-icon" href="{% url 'appname:pathname' %}">
     
 </body>
 </html>
