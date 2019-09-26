@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="{% static 'appname/cssname.css' %}" />
 </head>
 <body>
+    
+    <!-- urlリンク -->
+    <a class="postalLink link-icon" href="{% url 'shisan:postal' %}">
+    
 </body>
 </html>
 
