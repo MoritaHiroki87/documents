@@ -8,7 +8,7 @@ django公式
 from django import forms
 from .models import Card
 
-# クラスのフォーム
+# モデルありのフォーム
 class ClassForm(forms.ModelForm):
     """フォーム"""
     class Meta:
@@ -19,7 +19,7 @@ class ClassForm(forms.ModelForm):
             'card_order',
         }
 
-# クラスなしのフォーム
+# モデルなしのフォーム
 class ClassLessForm(forms.Form):
     card_name = forms.CharField(label="カードの名前")
     card_detail = forms.FloatField(label="詳細")
