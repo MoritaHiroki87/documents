@@ -1,3 +1,5 @@
+```
+
 """
 Django settings for config project.
 
@@ -172,3 +174,5 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 # security.W016, security.W017
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
+
+```
