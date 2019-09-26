@@ -10,7 +10,7 @@ urlpatterns = [
     # admin
     path('admin/', admin.site.urls),
     # apps
-    path('app_name/', include('app_name.urls')), 
+    path('xxx/', include('app_name.urls')), 
     # userいじった時？
     path('accounts/', include('django.contrib.auth.urls')),
 ]
@@ -30,4 +30,4 @@ urlpatterns = [
 ```
 
 
-# app_nameをどこと歩調合わせるのかは未確認。
+# メモ
