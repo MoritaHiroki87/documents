@@ -16,13 +16,14 @@
 </head>
 <body>
     
-    <!-- urlリンク pathnameはurls.pyで指定のname属性-->
+    <!-- urlリンク -->
     <a class="postalLink link-icon" href="{% url 'appname:pathname' %}">
     
 </body>
 </html>
 
 ```
+pathnameはurls.pyで指定のname属性
 
 ### for文で辞書
 ```html
