@@ -32,5 +32,24 @@ class ProjectView(View):
         context = {'cards': cards,
                    'project': project[0]}
         return render(request, self.template_name, context)
+        
+
+# Create your views here.
+class IndexView(FormView):
+    template_name = "myapp/index.html"
+    form_class = MyAppForm
+    success_url = '/myapp/'
+    # initial = {"check_class": 1,} # 初期値
+
+    def post(self, request, *args, **kwargs):
+        form = MyAppForm
+        # result = calculation()
+        result = request.POST["check_class"] # ここのうまい撮り方
+        context = {
+            "form": form,
+            "result": result,
+        }
+        print(request.POST)
+        return render(request, "myapp/index.html", context)
 
 ```
