@@ -44,7 +44,7 @@ class IndexView(FormView):
     def post(self, request, *args, **kwargs):
         form = MyAppForm
         # result = calculation()
-        result = request.cleaned_data["check_class"]
+        result = request.POST["check_class"] # これはバリデーション済んでない生のデータ
         context = {
             "form": form,
             "result": result,
