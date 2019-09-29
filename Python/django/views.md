@@ -40,7 +40,24 @@ class IndexView(FormView):
     form_class = MyAppForm
     success_url = '/myapp/'
     # initial = {"check_class": 1,} # 初期値
-
+    
+    # フォームから入ったデータに色々やりたい時はこちら
+    def form_valid(self, form):
+        check_class = form.cleaned_data["check_class"]
+        int_rate = form.cleaned_data["int_rate"]
+        term = form.cleaned_data["term"]
+        borrow_amt = form.cleaned_data["borrow_amt"]
+        baloon = form.cleaned_data["baloon"]
+        int_reduce = form.cleaned_data["int_reduce"]
+        int_reduce_term = form.cleaned_data["int_reduce_term"]
+        result = calculation(check_class, int_rate, term, borrow_amt, baloon, int_reduce, int_reduce_term)
+        context = {
+            "form": form,
+            "result": "you got!!"
+        }
+        return render(self.request, "LoanPayment/index.html", context)
+        
+    # なぜPOSTに対してやってはならんのかという疑問は残る
     def post(self, request, *args, **kwargs):
         form = MyAppForm
         # result = calculation()
