@@ -44,7 +44,7 @@ class IndexView(FormView):
     def post(self, request, *args, **kwargs):
         form = MyAppForm
         # result = calculation()
-        result = request.POST["check_class"] # ここのうまい撮り方
+        result = request.cleaned_data["check_class"]
         context = {
             "form": form,
             "result": result,
