@@ -28,3 +28,7 @@ class Project(models.Model):
 
 
 ```
+
+
+参考にしたいところ
+[Django モデル層](https://qiita.com/sandream/items/494887598bacfc2b244c)
