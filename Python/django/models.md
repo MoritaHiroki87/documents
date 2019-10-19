@@ -1,5 +1,7 @@
 # models.pyの書き方
 
+## 凡例
+
 ```python
 from django.db import models
 
@@ -18,6 +20,15 @@ class Project(models.Model):
 
 ```
 
+## 設定できるオプション
+- ``primary_key``: ``Ture``にすることで主キーにできる。
+- ``unique``: ``True``でユニークのみ許可。``DateTimeField``型に関しては``unique_for_date``
+- ````: 
+- ````: 
+- ````: 
+
+## 特殊なフィールド
+- ``DecimalField``: デシマルとして保存できる。
 
 参考にしたいところ
 [Django モデル層](https://qiita.com/sandream/items/494887598bacfc2b244c)
