@@ -6,25 +6,14 @@ from django.db import models
 
 # Create your models here.
 class Project(models.Model):
-    """
-    プロジェクト
-    project_name:プロジェクト名
-    created_at:作成日時
-    updated_at:更新日時
-    """
-    """
     class Meta:
         db_table = "project"
-    """
+        
+    name = models.TextField()
+    null_blank = models.TextField(null=True, blank=True)
 
-    project_name = models.CharField(max_length=32)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-"""
     def __str__(self):
-        return str(self.pattern_num)
-"""
+        return str(self.name)
 
 
 ```
@@ -32,3 +21,4 @@ class Project(models.Model):
 
 参考にしたいところ
 [Django モデル層](https://qiita.com/sandream/items/494887598bacfc2b244c)
+[Djangoモデルフィールドのnullとblankの違いを理解する](https://djangobrothers.com/blogs/django_null_blank/)
