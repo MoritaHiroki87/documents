@@ -26,6 +26,8 @@ class Project(models.Model):
 - ``unique``: ``True``でユニークのみ許可。``DateTimeField``型に関しては``unique_for_date``
 - ``default``: デフォルト値の設定。呼び出し可能オブジェクトを取ることもできるので、関数与えたりでいい感じのデフォルト値を設定できる。
 - ``db_column``: DBのカラム名を設定する。DBのカラム名をmodelのフィールド名と別にしたいモチベーションってなんなんだろう。
+- ``max_length``: 桁数
+- ``validators``: バリデーション
 
 ## 特殊なフィールド
 - ``DecimalField``: デシマルとして保存できる。
@@ -33,3 +35,4 @@ class Project(models.Model):
 ## 参考にしたいところ
 [Django モデル層](https://qiita.com/sandream/items/494887598bacfc2b244c)  
 [Djangoモデルフィールドのnullとblankの違いを理解する](https://djangobrothers.com/blogs/django_null_blank/)   
+[バリデータ - Django ドキュメント](https://docs.djangoproject.com/ja/2.2/ref/validators/)   
