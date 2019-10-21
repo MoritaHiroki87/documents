@@ -25,6 +25,7 @@ class Project(models.Model):
 - ``primary_key``: ``Ture``にすることで主キーにできる。
 - ``unique``: ``True``でユニークのみ許可。``DateTimeField``型に関しては``unique_for_date``
 - ``default``: デフォルト値の設定。呼び出し可能オブジェクトを取ることもできるので、関数与えたりでいい感じのデフォルト値を設定できる。
+- ``db_column``: DBのカラム名を設定する。DBのカラム名をmodelのフィールド名と別にしたいモチベーションってなんなんだろう。
 
 ## 特殊なフィールド
 - ``DecimalField``: デシマルとして保存できる。
