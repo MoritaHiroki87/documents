@@ -14,6 +14,9 @@ class Project(models.Model):
         
     name = models.TextField()
     null_blank = models.TextField(null=True, blank=True)
+    min_n_max = models.IntegerField(default=30000,
+                                  validators=[validators.MinValueValidator(10000),
+                                              validators.MaxValueValidator(100000)])
 
     def __str__(self):
         return str(self.name)
