@@ -22,6 +22,7 @@ class Project(models.Model):
 ```
 
 ## 設定できるオプション
+- ``null``と``blank``: ``null``はDBの空欄、``blank``はフォームの空欄
 - ``primary_key``: ``Ture``にすることで主キーにできる。
 - ``unique``: ``True``でユニークのみ許可。``DateTimeField``型に関しては``unique_for_date``
 - ``default``: デフォルト値の設定。呼び出し可能オブジェクトを取ることもできるので、関数与えたりでいい感じのデフォルト値を設定できる。
