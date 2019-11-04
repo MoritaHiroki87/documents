@@ -13,6 +13,7 @@ class Project(models.Model):
         db_table = "project"
         
     id = models.AutoField(primary_key=True)
+    # primary_keyは自動インクリメントさせたいならAutoFieldで設定する。インクリメントの法則を自由にしたい場合はdefautに関数与えるとかする。
     name = models.TextField()
     null_blank = models.TextField(null=True, blank=True)
     min_n_max = models.IntegerField(default=30000,
