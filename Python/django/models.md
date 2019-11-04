@@ -12,6 +12,7 @@ class Project(models.Model):
     class Meta:
         db_table = "project"
         
+    ID = models.AutoField(primary_key=True)
     name = models.TextField()
     null_blank = models.TextField(null=True, blank=True)
     min_n_max = models.IntegerField(default=30000,
