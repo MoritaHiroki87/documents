@@ -7,23 +7,34 @@ from django.db import models
 import uuid
 
 
-# Create your models here.
-class Project(models.Model):
-    class Meta:
-        db_table = "project"
-        
+class Book(models.Model):
+    HARDCOVER = 1
+    PAPERBACK = 2
+    EBOOK = 3
+    BOOK_TYPES = (
+        (HARDCOVER, 'Hardcover'),
+        (PAPERBACK, 'Paperback'),
+        (EBOOK, 'E-book'),
+    )
     id = models.AutoField(primary_key=True)
     # primary_keyは自動インクリメントさせたいならAutoFieldで設定する。インクリメントの法則を自由にしたい場合はdefautに関数与えるとかする。
-    name = models.TextField()
-    null_blank = models.TextField(null=True, blank=True)
+    title = models.CharField(max_length=50)
+    publication_date = models.DateField(null=True)
+    author = models.CharField(max_length=30, blank=True)
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    pages = models.IntegerField(blank=True, null=True)
+    book_type = models.PositiveSmallIntegerField(choices=BOOK_TYPES)
     min_n_max = models.IntegerField(default=30000,
                                   validators=[validators.MinValueValidator(10000),
                                               validators.MaxValueValidator(100000)])
 
+    class Meta:
+        verbose_name = 'book'
+        verbose_name_plural = 'books'
+        
     def __str__(self):
         return str(self.name)
-
-
+        
 ```
 
 ## 設定できるオプション
