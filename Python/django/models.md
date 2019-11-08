@@ -20,7 +20,8 @@ class Book(models.Model):
     # primary_keyは自動インクリメントさせたいならAutoFieldで設定する。インクリメントの法則を自由にしたい場合はdefautに関数与えるとかする。
     title = models.CharField(max_length=50)
     publication_date = models.DateField(null=True)
-    author = models.CharField(max_length=30, blank=True)
+    
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     pages = models.IntegerField(blank=True, null=True)
     book_type = models.PositiveSmallIntegerField(choices=BOOK_TYPES)
@@ -34,6 +35,9 @@ class Book(models.Model):
         
     def __str__(self):
         return str(self.name)
+        
+class Author(models.Model):
+    name = models.CharField(max_length=30, blank=True)
         
 ```
 
