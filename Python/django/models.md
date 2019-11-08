@@ -21,7 +21,7 @@ class Book(models.Model):
     title = models.CharField(max_length=50)
     publication_date = models.DateField(null=True)
     
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, on_delete=models.PROTECT)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     pages = models.IntegerField(blank=True, null=True)
     book_type = models.PositiveSmallIntegerField(choices=BOOK_TYPES)
