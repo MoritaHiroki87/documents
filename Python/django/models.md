@@ -57,3 +57,4 @@ class Author(models.Model):
 [Django モデル層](https://qiita.com/sandream/items/494887598bacfc2b244c)  
 [Djangoモデルフィールドのnullとblankの違いを理解する](https://djangobrothers.com/blogs/django_null_blank/)   
 [バリデータ - Django ドキュメント](https://docs.djangoproject.com/ja/2.2/ref/validators/)   
+[PostgreSQL specific model fields ArrayField](https://docs.djangoproject.com/ja/2.2/ref/contrib/postgres/fields/#arrayfield)   
