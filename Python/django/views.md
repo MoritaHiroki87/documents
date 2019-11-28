@@ -77,6 +77,7 @@ class PostView(generic.ListView):
     # モデルの指定方法はmodel, queryset, get_queryset()の3パターンある。
     model = Post
     def get_queryset(self):
+        user = self.request.user # ユーザー情報の取り方はこれ。脈絡ないけど。
         return Post.objects.all()
 
 ```
