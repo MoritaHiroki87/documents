@@ -68,5 +68,18 @@ class IndexView(FormView):
         }
         print(request.POST)
         return render(request, "myapp/index.html", context)
+        
+        
+
+class PostView(generic.ListView):
+    template_name = 'post_list.html'
+    
+    # モデルの指定方法はmodel, queryset, get_queryset()の3パターンある。
+    model = Post
+    def get_queryset(self):
+        return Post.objects.all()
 
 ```
+
+## 参考
+[Djangoの汎用ビュー入門（ListView）](https://hombre-nuevo.com/python/python0057/)
