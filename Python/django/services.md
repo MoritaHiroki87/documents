@@ -86,7 +86,7 @@ curtain__projectみたいにアンダーバーふたつで外部キーのやつ�
 ```
 
 ### modelをCSVに落とす
-日時系のデータだけエクスポートできなかったのでそこだけ注意。
+日時系のデータ、外部キー？　はエクスポートできなかったのでそこだけ注意。
 必要ならウニャウニャして頑張ってくれ
 
 #### 使い方
@@ -147,11 +147,14 @@ def get_f_values(models, field_names):
     for object in all_objects:
         value_list = list()
         dictized_object = model_to_dict(object)
-        print("@@@@@@@@@@@@@@@{}",format(dictized_object))
+        print("@@@@@@@ model_to_dictの値 @@@@@@@@{}".format(dictized_object))
         for f_name in field_names:
-            value_list.append(dictized_object[f_name])
+            if f_name in dictized_object.keys():
+                value_list.append(dictized_object[f_name])
+            else:
+                field_names.remove(f_name)
+                print("removeしました", f_name)
         value_2d_list.append(value_list)
     return value_2d_list
-
 
 ```
