@@ -94,6 +94,13 @@ create_model_csv(Model)
 
 #### コード
 ```
+
+# model_to_divt()
+# https://stackoverflow.com/questions/21925671/convert-django-model-object-to-dict-with-all-of-the-fields-intact
+# modelのフィールド名リストを取得
+# https://qiita.com/SATOSHI-G/items/e9bffe018d5a0294a7eb
+
+
 def create_model_csv(models):
     model_2d_list = create_model_2d_list(models)
     create_csv(models._meta.object_name, model_2d_list)
