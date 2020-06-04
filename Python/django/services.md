@@ -84,3 +84,63 @@ curtain__projectみたいにアンダーバーふたつで外部キーのやつ�
 
 
 ```
+
+### modelをCSVに落とす
+
+#### 使い方
+```
+create_model_csv(Model)
+```
+
+#### コード
+```
+def create_model_csv(models):
+    model_2d_list = create_model_2d_list(models)
+    create_csv(models._meta.object_name, model_2d_list)
+
+
+def create_csv(model_name, model_2d_list):
+    # ここフォルダパスは任意に変える
+    with open("AppName/export_datum/{}.csv".format(model_name), mode="w") as f:
+        writer = csv.writer(f)
+        writer.writerows(model_2d_list)
+
+
+def create_model_2d_list(models):
+    model_2d_list = list()
+    field_names = get_f_names(models)
+    value_2d_list = get_f_values(models, field_names)
+
+    model_2d_list.append(field_names)
+    model_2d_list = model_2d_list + value_2d_list
+
+    return model_2d_list
+
+
+def get_f_names(models):
+    meta_fields = models._meta.get_fields()
+    print(meta_fields)  # ※1
+
+    ret = list()
+    for i, meta_field in enumerate(meta_fields):
+        # ここちょっと注意。日時系のデータを弾いてる。
+        if (i > 0) and (meta_field.name not in ["create_date", "input_date", ]):
+            ret.append(meta_field.name)
+    print(ret)  # ※2
+    return ret
+
+
+def get_f_values(models, field_names):
+    all_objects = models.objects.all()
+    value_2d_list = list()
+    for object in all_objects:
+        value_list = list()
+        dictized_object = model_to_dict(object)
+        print("@@@@@@@@@@@@@@@{}",format(dictized_object))
+        for f_name in field_names:
+            value_list.append(dictized_object[f_name])
+        value_2d_list.append(value_list)
+    return value_2d_list
+
+
+```
