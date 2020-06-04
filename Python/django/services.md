@@ -99,6 +99,8 @@ create_model_csv(Model)
 
 # model_to_divt()
 # https://stackoverflow.com/questions/21925671/convert-django-model-object-to-dict-with-all-of-the-fields-intact
+# バグの内容
+# https://stackoverflow.com/questions/16080829/django-model-to-dict-skips-all-datetimefield-when-converting-models
 # modelのフィールド名リストを取得
 # https://qiita.com/SATOSHI-G/items/e9bffe018d5a0294a7eb
 
